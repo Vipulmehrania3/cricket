@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEET Mentor Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <header class="top-nav glass">
+      <div class="brand">
+        <span class="brand-logo">✦</span>
+        <div>
+          <h1>NEET Mentor Pro</h1>
+          <p>Adaptive preparation workspace</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="btn btn-secondary" id="saveProfileBtn">Save Profile</button>
+        <button class="btn btn-primary" id="startMockBtn">Start Mock</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card glass profile">
+        <h2>Student Personalization</h2>
+        <div class="form-grid">
+          <label>
+            Target Exam
+            <input id="examTarget" value="NEET 2027" />
+          </label>
+          <label>
+            Daily Study Goal (hrs)
+            <input id="studyGoal" type="number" min="1" max="16" value="6" />
+          </label>
+          <label>
+            Preferred Subject
+            <select id="subjectSelect"></select>
+          </label>
+          <label>
+            Chapter Focus
+            <select id="chapterSelect"></select>
+          </label>
+          <label>
+            Topic Focus
+            <select id="topicSelect"></select>
+          </label>
+          <label>
+            Question Type
+            <select id="typeSelect">
+              <option>Conceptual</option>
+              <option>Numerical</option>
+              <option>Statement Based</option>
+              <option>Assertion-Reason</option>
+              <option>Mixed</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="card glass quick-stats">
+        <h2>Performance Intelligence</h2>
+        <div class="stats-grid" id="statsGrid"></div>
+        <div class="insight" id="aiInsight"></div>
+      </section>
+
+      <section class="card glass practice">
+        <div class="section-head">
+          <h2>Smart Question Practice</h2>
+          <button class="btn btn-primary" id="newQuestionBtn">Generate Question</button>
+        </div>
+        <div id="questionBox" class="question-box"></div>
+        <div class="answer-actions">
+          <button class="btn btn-success" data-result="correct">I Solved Correctly</button>
+          <button class="btn btn-warning" data-result="mistake">I Made a Mistake</button>
+          <button class="btn btn-danger" data-result="skipped">Skipped</button>
+        </div>
+      </section>
+
+      <section class="card glass mistakes">
+        <div class="section-head">
+          <h2>Mistake Tracker & Remediation</h2>
+          <button class="btn btn-secondary" id="clearMistakesBtn">Clear Logs</button>
+        </div>
+        <div id="mistakeList" class="mistake-list"></div>
+      </section>
+
+      <section class="card glass mock-tests">
+        <h2>Custom Mock Configuration</h2>
+        <div class="form-grid mock-grid">
+          <label>
+            Number of Questions
+            <input id="mockQuestions" type="number" value="45" min="15" max="200" />
+          </label>
+          <label>
+            Time Limit (minutes)
+            <input id="mockTime" type="number" value="60" min="20" max="180" />
+          </label>
+          <label>
+            Difficulty Mix
+            <select id="mockDifficulty">
+              <option>Easy + Medium</option>
+              <option selected>Balanced</option>
+              <option>Medium + Hard</option>
+              <option>High Challenge</option>
+            </select>
+          </label>
+          <label>
+            Priority Weak Areas
+            <select id="mockWeakArea">
+              <option selected>Yes</option>
+              <option>No</option>
+            </select>
+          </label>
+        </div>
+        <div class="mock-summary" id="mockSummary"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
